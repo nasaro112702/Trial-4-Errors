@@ -49,7 +49,5 @@ public class MainActivity extends AppCompatActivity {
         } catch (WriterException e) {
             throw new RuntimeException(e);
         }
-
-
     }
 }
