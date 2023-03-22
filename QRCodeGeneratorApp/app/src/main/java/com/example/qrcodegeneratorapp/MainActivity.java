@@ -31,9 +31,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void generateCode(View view){
-        String input = text.getText().toString().trim();
+        String input = text.getText().toString();
 
         MultiFormatWriter writer = new MultiFormatWriter();
+
         try {
             BitMatrix matrix = writer.encode(input, BarcodeFormat.QR_CODE, 350, 350);
 
@@ -44,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
             result.setImageBitmap(bitmap);
 
             InputMethodManager manager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+
             manager.hideSoftInputFromWindow(text.getApplicationWindowToken(), 0);
 
         } catch (WriterException e) {
