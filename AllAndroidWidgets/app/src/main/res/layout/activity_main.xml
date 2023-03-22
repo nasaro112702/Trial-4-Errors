@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:paddingHorizontal="20dp"
+        android:paddingBottom="50dp">
+
+        <RadioGroup
+            android:id="@+id/rg_gender"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:baselineAligned="false"
+            android:paddingHorizontal="20dp"
+            tools:layout_editor_absoluteX="148dp"
+            tools:layout_editor_absoluteY="142dp">
+
+            <RadioButton
+                android:id="@+id/rd_male"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Male"
+                tools:layout_editor_absoluteX="93dp"
+                tools:layout_editor_absoluteY="118dp" />
+
+            <RadioButton
+                android:id="@+id/rd_female"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Female"
+                tools:layout_editor_absoluteX="93dp"
+                tools:layout_editor_absoluteY="118dp" />
+
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:onClick="clearGenderSelection"
+            android:text="CLEAR SELECTION" />
+
+        <RatingBar
+            android:id="@+id/rate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:numStars="5"
+            android:rating="4.5"
+            android:stepSize="0.5" />
+
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:onClick="showRate"
+            android:text="SHOW RATING" />
+
+        <ProgressBar
+            android:id="@+id/progress"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp" />
+
+        <Button
+            android:id="@+id/button4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:onClick="startProgress"
+            android:text="START PROGRESS" />
+
+        <SeekBar
+            android:id="@+id/sb_test"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp" />
+
+        <Switch
+            android:id="@+id/sw"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center_horizontal"
+            android:onClick="clickSwitch"
+            android:text="Switch Me" />
+
+        <ToggleButton
+            android:id="@+id/tb_test"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:onClick="clickToggle"
+            android:text="ToggleButton" />
+
+        <AutoCompleteTextView
+            android:id="@+id/auto_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusable="auto"
+            android:hint="Enter Someting"
+            android:paddingHorizontal="20dp"
+            android:textAlignment="center" />
+
+        <Spinner
+            android:id="@+id/spin_test"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp" />
+
+        <MultiAutoCompleteTextView
+            android:id="@+id/multi_text_test"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Multiple Names"
+            android:textAlignment="center" />
+
+        <CheckedTextView
+            android:id="@+id/checkText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:checkMark="?android:attr/listChoiceIndicatorMultiple"
+            android:checked="true"
+            android:drawableLeft="@android:drawable/btn_star_big_on"
+            android:gravity="center_vertical"
+            android:text="I am A TextView Check"
+            android:textSize="20sp" />
+
+
+    </LinearLayout>
+
+
+</ScrollView>

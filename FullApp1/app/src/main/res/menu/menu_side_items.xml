@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:icon="@drawable/baseline_home_24"
+            android:title="Dashboard" />
+        <item
+            android:icon="@drawable/baseline_person_24"
+            android:title="Developer" />
+        <item
+            android:icon="@drawable/baseline_quiz_24"
+            android:title="Quiz" />
+        <item
+            android:icon="@drawable/baseline_apps_24"
+            android:title="More Apps" />
+    </group>
+
+    <item android:title="Others">
+        <menu>
+
+            <item
+                android:icon="@drawable/baseline_feedback_24"
+                android:title="Feedback" />
+            <item
+                android:icon="@drawable/baseline_share_24"
+                android:title="Share" />
+            <item
+                android:icon="@drawable/baseline_star_rate_24"
+                android:title="Rate This App" />
+            <item
+                android:icon="@drawable/baseline_privacy_tip_24"
+                android:title="Privacy Policy" />
+        </menu>
+    </item>
+</menu>
