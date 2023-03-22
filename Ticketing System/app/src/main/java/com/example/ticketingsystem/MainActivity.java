@@ -13,6 +13,4 @@ public class MainActivity extends AppCompatActivity {
 
         System.out.print("Hello World");
     }
-
-
 }
