@@ -1,9 +1,9 @@
 package com.example.qrcodescangenerate2;
 
 import androidx.activity.result.ActivityResultLauncher;
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.graphics.Bitmap;
@@ -48,11 +48,6 @@ public class MainActivity extends AppCompatActivity {
             Bitmap bitmap = encoder.createBitmap(matrix);
 
             result.setImageBitmap(bitmap);
-
-            InputMethodManager manager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-
-            manager.hideSoftInputFromWindow(text.getApplicationWindowToken(), 0);
-
         } catch (WriterException e) {
             throw new RuntimeException(e);
         }
@@ -60,24 +55,25 @@ public class MainActivity extends AppCompatActivity {
 
     public void scanCode(View view){
         ScanOptions options = new ScanOptions();
-        options.setOrientationLocked(true);
         options.setCaptureActivity(CaptureAct.class);
         options.setBeepEnabled(true);
-        options.setPrompt("Place the camera to the code");
+        options.setOrientationLocked(true);
         barlauncher.launch(options);
     }
 
-    ActivityResultLauncher<ScanOptions> barlauncher = registerForActivityResult(new ScanContract(), result -> {
+    ActivityResultLauncher<ScanOptions> barlauncher = registerForActivityResult(new ScanContract(), result ->{
         if(result.getContents() != null){
-            AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
-            builder.setTitle("Result");
-            builder.setMessage(result.getContents());
-            builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-                    dialog.dismiss();
-                }
-            }).show();
+            new AlertDialog.Builder(MainActivity.this)
+                    .setTitle("Result")
+                    .setMessage(result.getContents())
+                    .setPositiveButton("ok", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.dismiss();
+                        }
+                    }).create().show();
         }
     });
+
+
 }

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:icon="@drawable/baseline_pages_24"
+        android:title="Pager" />
+    <item
+        android:icon="@drawable/baseline_recycling_24"
+        android:title="Recycler" />
+    <item
+        android:icon="@drawable/baseline_qr_code_24"
+        android:title="QRCode" />
+</menu>
