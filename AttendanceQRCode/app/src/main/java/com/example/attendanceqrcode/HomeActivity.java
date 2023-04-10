@@ -2,6 +2,7 @@ package com.example.attendanceqrcode;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -19,24 +20,28 @@ public class HomeActivity extends AppCompatActivity {
 
         bottomNavigationView = findViewById(R.id.bottomNavigationView);
 
-        getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, new HomeFragment()).commit();
+        replaceFragment(new HomeFragment());
 
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                switch(item.getTitle().toString()){
-                    case "Home":
-                        getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, new HomeFragment()).commit();
+                switch(item.getItemId()){
+                    case R.id.home:
+                        replaceFragment(new HomeFragment());
                         break;
-                    case "Attendance Checker":
-                        getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, new ScanFragment()).commit();
+                    case R.id.scan:
+                        replaceFragment(new ScanFragment());
                         break;
-                    case "Students":
-                        getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, new StudentsFragment()).commit();
+                    case R.id.students:
+                        replaceFragment(new StudentsFragment());
                         break;
                 }
                 return true;
             }
         });
     }
+    public void replaceFragment(Fragment fragment){
+        getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, fragment).commit();
+    }
+
 }
