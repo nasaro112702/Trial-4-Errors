@@ -48,9 +48,8 @@ public class MainActivity extends AppCompatActivity {
             Cursor cursor = databaseHelper.getValue("select * from users where username='"+username+"' and password='"+password+"'");
             if(cursor.getCount() > 0){
 
-                while(cursor.moveToNext()){
-                    editor.putString("user_id", cursor.getString(0));
-                }
+                cursor.moveToNext();
+                editor.putString("user_id", cursor.getString(0));
                 editor.apply();
                 startActivity(new Intent(this, HomeActivity.class));
             }else{
