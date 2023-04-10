@@ -1,6 +1,7 @@
 package com.example.attendanceqrcode;
 
 import android.content.Context;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -22,8 +23,9 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyHold
     @NonNull
     @Override
     public MyHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-
-        return null;
+        View view = LayoutInflater.from(context).inflate(R.layout.cardview, parent, false);
+        MyHolder myHolder = new MyHolder(view);
+        return myHolder;
     }
 
     @Override
