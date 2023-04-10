@@ -32,13 +32,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         cv.put("username", username);
         cv.put("password", password);
         cv.put("contact_no", contact_no);
-
         db.insert("users", null, cv);
     }
 
     Cursor getValue(String query){
         return db.rawQuery(query, null);
     }
-
-
 }
