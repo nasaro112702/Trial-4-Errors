@@ -17,7 +17,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("create table users (id int primary key autoincrement, firstname text, lastname text, username text, password text)");
+        db.execSQL("create table users (id int primary key autoincrement, firstname text, lastname text, username text, password text, contact_no text)");
     }
 
     @Override
@@ -25,12 +25,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL("drop table if exists users");
     }
 
-    void addUser(String firstname, String lastname, String username, String password){
+    void addUser(String firstname, String lastname, String username, String password, String contact_no){
         ContentValues cv = new ContentValues();
         cv.put("firstname", firstname);
         cv.put("lastname", lastname);
         cv.put("username", username);
         cv.put("password", password);
+        cv.put("contact_no", contact_no);
 
         db.insert("users", null, cv);
     }
