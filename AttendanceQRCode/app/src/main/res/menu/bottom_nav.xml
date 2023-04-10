@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:title="Home" />
-    <item android:title="Attendance Checker" />
-    <item android:title="Students" />
+    <item android:title="Home"
+        android:icon="@drawable/baseline_home_24"
+        android:id="@+id/home"/>
+    <item android:title="Attendance Checker"
+        android:icon="@drawable/baseline_qr_code_scanner_24"
+        android:id="@+id/scan"/>
+    <item android:title="Students"
+        android:icon="@drawable/baseline_groups_24"
+        android:id="@+id/students"/>
 </menu>
