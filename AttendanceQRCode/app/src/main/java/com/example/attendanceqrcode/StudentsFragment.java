@@ -3,10 +3,14 @@ package com.example.attendanceqrcode;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -55,10 +59,39 @@ public class StudentsFragment extends Fragment {
         }
     }
 
+    ArrayList<RecyclerItems> items;
+
+    RecyclerView recyclerView;
+
+    RecyclerAdapter recyclerAdapter;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
+        View view = inflater.inflate(R.layout.fragment_students, container, false);
+
+        loadItems();
+
+        recyclerView = view.findViewById(R.id.recycler);
+        recyclerAdapter = new RecyclerAdapter(getContext(), items);
+
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
+        linearLayoutManager.setOrientation(RecyclerView.VERTICAL);
+
+        recyclerView.setLayoutManager(linearLayoutManager);
+        recyclerView.setAdapter(recyclerAdapter);
+
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_students, container, false);
+        return view;
+    }
+
+    private void loadItems() {
+        items = new ArrayList<>();
+
+        items.add(new RecyclerItems());
+        items.add(new RecyclerItems());
+        items.add(new RecyclerItems());
+        items.add(new RecyclerItems());
     }
 }
