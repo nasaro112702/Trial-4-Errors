@@ -7,6 +7,17 @@
     tools:context=".MenuActivity">
 
     <Button
+        android:id="@+id/button15"
+        android:layout_width="300dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="16dp"
+        android:onClick="open"
+        android:text="Connect Printer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button3" />
+
+    <Button
         android:id="@+id/button2"
         android:layout_width="300dp"
         android:layout_height="48dp"
@@ -49,7 +60,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
-        android:text="Welcome To Pacqueo Dental Clinic"
+        android:text="Welcome To Paqueo Dental Clinic"
         android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

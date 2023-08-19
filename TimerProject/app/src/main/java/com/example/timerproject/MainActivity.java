@@ -95,8 +95,6 @@ public class MainActivity extends AppCompatActivity{
                 }
             });
         }
-
-        
     }
 
     public void sendSMS(String number, String message){

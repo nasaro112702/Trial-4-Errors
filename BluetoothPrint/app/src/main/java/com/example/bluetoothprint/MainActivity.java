@@ -16,6 +16,7 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.EditText;
 import android.widget.Button;
+import android.widget.Toast;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -38,19 +39,48 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void open(View view){
-        printer.findDevice();
-        try {
-            printer.openConnection();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
+        BluetoothAdapter bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
+        if (!bluetoothAdapter.isEnabled()) {
+            // Bluetooth is currently disabled, prompt the user to enable it
+            Intent enableBtIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
+            startActivityForResult(enableBtIntent, 2);
+        }else{
+            printer.findDevice();
+            try {
+                printer.openConnection();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
         }
     }
 
     public void send(View view){
         try {
-            printer.boldText(true);
+            printer.defaultText();
+            printer.space("start");
             printer.setTextAlignment("center");
-            printer.printText("Hello World");
+            printer.setTextSize("x-large");
+            printer.printText("Paqueo");
+            printer.printText("Dental Clinic");
+            printer.setTextSize("normal");
+            printer.printText("Navarro Street, Surigao City");
+            printer.printText("8400 Surigao del Norte");
+            printer.printText("paqueodentalclinic@gmail.com");
+            printer.printText("09196196889");
+            printer.setTextAlignment("left");
+            printer.printText("\nName: Ryan C. Elico");
+            printer.printText("Contact Number: 09096490065");
+            printer.printText("Service: Dental Crown");
+            printer.line();
+            printer.setTextAlignment("center");
+            printer.boldText(true);
+            printer.setTextSize("x-large");
+            printer.printText("457");
+            printer.defaultText();
+            printer.line();
+            printer.setTextAlignment("center");
+            printer.printText("*This serves as your ticket*");
+            printer.space("end");
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

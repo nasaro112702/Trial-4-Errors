@@ -1,10 +1,9 @@
-package com.example.bluetoothprint;
+package com.example.pmsqrcqueue;
 
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothSocket;
 import android.content.Context;
-import android.content.Intent;
 import android.os.Handler;
 
 import java.io.IOException;
